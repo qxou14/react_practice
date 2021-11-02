@@ -29,7 +29,7 @@ function Details(user) {
       <h2>Albums:</h2>
       {alb == 1 ? <Albums id={user.id} /> : null}
       {alb == 0 ? (
-        <input type="submit" value="post" onClick={() => setAlb(1)} />
+        <input type="submit" value="Albums" onClick={() => setAlb(1)} />
       ) : null}
     </div>
   );
