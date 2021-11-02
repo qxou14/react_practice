@@ -27,8 +27,8 @@ class User extends React.Component {
       <div>
         {List.map((user) => (
           <p className="pointer">
-          <Link className="pointer" href={"/Details/" + user.id} key={user.id}>
-            <b>{user.name}</b>
+          <Link href={"/Details/" + user.id} key={user.id}>
+            <b className="color">{user.name}</b>
           </Link>
           <hr></hr>
           </p>
