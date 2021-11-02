@@ -5,7 +5,7 @@ class User extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      List: [],
+      List: []
     };
   }
 
@@ -26,9 +26,12 @@ class User extends React.Component {
     return (
       <div>
         {List.map((user) => (
-          <Link href={"/Details/" + user.id} key={user.id}>
-            <h3>{user.name}</h3>
+          <p className="pointer">
+          <Link className="pointer" href={"/Details/" + user.id} key={user.id}>
+            <b>{user.name}</b>
           </Link>
+          <hr></hr>
+          </p>
         ))}
       </div>
     );

@@ -23,26 +23,33 @@ function Details(user) {
       <h2>Posts:</h2>
       {post == 1 ? <Post id={user.id} /> : null}
       {post == 0 ? (
-        <input type="submit" value="post" onClick={() => setPost(1)} />
+        <input type="submit" value="show_post" onClick={() => setPost(1)} />
+      ) : null}
+
+      {post == 1 ? (
+        <input type="submit" value="hide_post" onClick={() => setPost(0)} />
       ) : null}
 
       <hr></hr>
       <h2>Albums:</h2>
       {alb == 1 ? <Albums id={user.id} /> : null}
       {alb == 0 ? (
-        <input type="submit" value="Albums" onClick={() => setAlb(1)} />
+        <input type="submit" value="show_albums" onClick={() => setAlb(1)} />
+      ) : null}
+
+      {alb == 1 ? (
+        <input type="submit" value="hide_albums" onClick={() => setAlb(0)} />
       ) : null}
     </div>
   );
 }
-
 
 //pre render all pages based on key
 export async function getStaticPaths() {
   const res = await fetch("https://jsonplaceholder.typicode.com/users");
   const data = await res.json();
 
-  //all ids 
+  //all ids
   const paths = data.map((user) => ({
     params: { id: user.id.toString() },
   }));
