@@ -26,9 +26,9 @@ class Albums extends React.Component {
       <div>
         {albums.map((album) => (
           <Link href={"/Albums/" + album.id} key={album.id}>
-            <ul>
-              <li>ID: {album.id}</li>
-              <li>Title: {album.title}</li>
+            <ul className="pointer">
+              <li className="color" >ID: {album.id}</li>
+              <li className="color">Title: {album.title}</li>
             </ul>
           </Link>
         ))}
