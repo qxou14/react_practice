@@ -1,5 +1,6 @@
 import React from "react";
 
+
 class Post extends React.Component {
   constructor(props) {
     super(props);
@@ -12,7 +13,7 @@ class Post extends React.Component {
     fetch("https://jsonplaceholder.typicode.com/posts?userId=" + this.props.id)
       .then((res) => res.json())
       .then((data) => {
-        //this gives us the object
+    
         this.setState({
           posts: data,
         });

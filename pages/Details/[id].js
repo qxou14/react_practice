@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Post from "./Post";
 import Albums from "./Albums";
 
+//pass from getstaticsprops
 function Details(user) {
   const [post, setPost] = useState(0);
   const [alb, setAlb] = useState(0);
@@ -35,11 +36,13 @@ function Details(user) {
   );
 }
 
-//determine which key is pre render
+
+//pre render all pages based on key
 export async function getStaticPaths() {
   const res = await fetch("https://jsonplaceholder.typicode.com/users");
   const data = await res.json();
 
+  //all ids 
   const paths = data.map((user) => ({
     params: { id: user.id.toString() },
   }));
@@ -49,6 +52,7 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
+//if getStaticspaths have 10 keys, getstatics props will run 10 times
 //we get the id of the students
 //pre render the page the page using the id we got
 export async function getStaticProps({ params }) {

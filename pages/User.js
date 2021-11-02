@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-
+//getStaticProps
 class User extends React.Component {
   constructor(props) {
     super(props);
