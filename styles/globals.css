@@ -25,7 +25,11 @@ ul {
 
 .color:hover{
   background-color: red;
+  box-sizing: border-box;
+  width:15rem;
+  border:1px solid #333;
 }
+
 
 
 
